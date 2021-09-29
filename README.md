@@ -1,5 +1,7 @@
 # P12 Local Control Button
 
+### Motivation
+
 If you're like me, I use my DSI/Sequential Prophet 12 synthesizer a lot.
 Lately I use it both as my primary MIDI controller and as a standalone
 synth.
@@ -20,6 +22,8 @@ I decided to use up the Prophet's MIDI IN jack for this project since
 I had previously only been using the USB MIDI. Sure, it's kind of a
 waste of a MIDI input for a single button, but hey I like it.
 
+## Code Notes
+
 The code here is an Arduino sketch to send the P12 NRPN command which
 corresponds to Local Control (1035). Some of the other Prophets of
 the same era use the same NRPN, so this should also work for the OB6
@@ -29,25 +33,18 @@ You'll notice the code depends on a few libraries. The Arduino IDE should
 help you locate and install them if you don't have them already:
 
 * EEPROM
-* MIDI
-* EasyButton
+* [MIDI](https://github.com/FortySevenEffects/arduino_midi_library)
+* [EasyButton](https://github.com/evert-arias/EasyButton)
 
-### The circuit
+### The Circuit
 
-The circuit consists of a momentary button, a convenience LED a few
+The circuit consists of a momentary button, a convenience LED, a few
 resistors, MIDI connector and an Arduino. In my case I used an Arduino
 Nano, but others should work, too.
 
-I may include schematic at some point, but generally, you can find
-instructions for the MIDI output circuit online. Of course, use the TX
-pin on the Arduino. You'll have to disconnect that pin while uploading
-the code to the Arduino.
-
-The button is connected on one side to Pin 5, and on the other to a
-1k resistor connected to ground.
-
-The LED is connected on the plus side to Pin 4, and on the other side
-to a 1k resistor connected to ground.
+I've included some JPGs showing off my rudimentary skills in making a
+schematic and a breadboard layout. Prepare to be impressed, but do
+double-check everything. I put this together _after_ I made my device.
 
 ### MIDI Channel Configuration
 
